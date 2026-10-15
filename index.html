@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ภูผา นุดา | คณะนิติศาสตร์ มหาวิทยาลัยขอนแก่น</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0b1b2b',
+                            950: '#06101b',
+                        },
+                        gold: {
+                            300: '#f3d382',
+                            400: '#eec663',
+                            500: '#c29b38',
+                            600: '#a37e28',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #0b1b2b;
+            color: #e2e8f0;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3d382 0%, #c29b38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(194, 155, 56, 0.2);
+        }
+        .glass-card {
+            background: rgba(16, 42, 67, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(243, 211, 130, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(243, 211, 130, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-950 min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card bg-opacity-90 border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-300 to-gold-600 flex items-center justify-center font-bold text-navy-950 text-xl shadow-lg transition-transform group-hover:scale-105">
+                        PN
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-wider text-white block leading-none">PHUPHA</span>
+                        <span class="text-xs text-gold-400 font-light tracking-widest uppercase">Law Portfolio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-gold-300 transition-colors">เกี่ยวกับฉัน</a>
+                    <a href="#sop" class="text-slate-300 hover:text-gold-300 transition-colors">เจตจำนง (SOP)</a>
+                    <a href="#education" class="text-slate-300 hover:text-gold-300 transition-colors">ประวัติการศึกษา</a>
+                    <a href="#activities" class="text-slate-300 hover:text-gold-300 transition-colors">กิจกรรม</a>
+                    <a href="#certificates" class="text-slate-300 hover:text-gold-300 transition-colors">เกียรติบัตร</a>
+                    <a href="#contact" class="px-4 py-2 rounded-full border border-gold-400/50 text-gold-300 hover:bg-gold-500 hover:text-navy-950 font-medium transition-all duration-300">
+                        ติดต่อ
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Toggle -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-gold-300">เกี่ยวกับฉัน</a>
+            <a href="#sop" class="block py-2 text-slate-300 hover:text-gold-300">เจตจำนง (SOP)</a>
+            <a href="#education" class="block py-2 text-slate-300 hover:text-gold-300">ประวัติการศึกษา</a>
+            <a href="#activities" class="block py-2 text-slate-300 hover:text-gold-300">กิจกรรม</a>
+            <a href="#certificates" class="block py-2 text-slate-300 hover:text-gold-300">เกียรติบัตร</a>
+            <a href="#contact" class="inline-block mt-2 px-6 py-2 rounded-full border border-gold-400 text-gold-300">ติดต่อ</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background Lighting Decorative Elements -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>โครงการรับนักเรียนผู้มีคุณธรรม จริยธรรมและบำเพ็ญประโยชน์ (เด็กดีมีที่เรียน)</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+                        แฟ้มสะสมผลงาน <br>
+                        <span class="gold-gradient-text">คณะนิติศาสตร์ มหาวิทยาลัยขอนแก่น</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl text-slate-300 font-light">
+                        นายภูผา นุดา <span class="text-gold-400 font-medium">(ภู)</span>
+                    </h2>
+
+                    <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-sm sm:text-base">
+                        ศิษย์เก่าโรงเรียนบ้านไผ่ (บ.พ.) มีความมุ่งมั่นและตั้งใจอย่างแน่วแน่ในการเข้าศึกษาต่อในระดับปริญญาตรี คณะนิติศาสตร์ มหาวิทยาลัยขอนแก่น เพื่อเป้าหมายในการเป็นอัยการเพื่อคุ้มครองผู้บริสุทธิ์และอำนวยความยุติธรรมให้แก่สังคม
+                    </p>
+
+                    <!-- Quote Banner -->
+                    <div class="p-4 sm:p-5 rounded-2xl glass-card border-l-4 border-l-gold-400 text-left my-6 relative">
+                        <i class="fa-solid fa-quote-left text-gold-500/30 text-3xl absolute top-3 right-4"></i>
+                        <p class="text-slate-200 italic text-sm sm:text-base font-light">
+                            "กฎหมายมิได้ใช้แค่กับคนที่อ่อนแอกว่า แต่กฎหมายคือสิ่งที่ทุกคนต้องเคารพ และไม่มีใครอยู่เหนือกฎหมายเพราะประชาชนทุกคนเท่าเทียมกัน"
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#sop" class="px-6 py-3 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-semibold shadow-lg hover:brightness-110 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-scroll"></i> อ่าน Statement of Purpose
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-xl glass-card text-slate-200 hover:text-gold-300 hover:border-gold-400/50 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-address-book"></i> ช่องทางการติดต่อ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Decorative Frame Layer -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-400 to-blue-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <div class="relative glass-card rounded-3xl p-6 sm:p-8 text-center gold-border-glow">
+                            <!-- Image Avatar Wrapper -->
+                            <div class="w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-full overflow-hidden border-4 border-gold-400/60 p-1 bg-navy-800 shadow-2xl mb-6 relative">
+                                <img src="https://placehold.co/400x400/102a43/f3d382?text=Phupha+Nuda" alt="นายภูผา นุดา" class="w-full h-full object-cover rounded-full">
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-1">นายภูผา นุดา</h3>
+                            <p class="text-gold-400 text-sm font-medium mb-4">อายุ 18 ปี | สัญชาติไทย</p>
+
+                            <div class="grid grid-cols-2 gap-3 text-left border-t border-slate-700/60 pt-4 text-xs sm:text-sm">
+                                <div>
+                                    <span class="text-slate-400 block text-xs">วันเกิด</span>
+                                    <span class="text-slate-200 font-medium">8 พฤษภาคม 2551</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-400 block text-xs">ศาสนา</span>
+                                    <span class="text-slate-200 font-medium">พุทธ</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-400 block text-xs">ภูมิลำเนา</span>
+                                    <span class="text-slate-200 font-medium">อ.บ้านไผ่ จ.ขอนแก่น</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-400 block text-xs">สถานศึกษาปัจจุบัน</span>
+                                    <span class="text-slate-200 font-medium">วสส.ขอนแก่น</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATEMENT OF PURPOSE SECTION -->
+    <section id="sop" class="py-20 bg-navy-900/50 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Statement of Purpose</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">จดหมายแสดงเจตจำนง</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-gold-300 to-gold-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 text-gold-500/10 pointer-events-none">
+                    <i class="fa-solid fa-gavel text-9xl"></i>
+                </div>
+
+                <div class="space-y-6 text-slate-300 leading-relaxed text-base sm:text-lg relative z-10 font-light">
+                    <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-gold-400 first-letter:mr-2">
+                        ข้าพเจ้านายภูผา นุดา นักศึกษาชั้นปีที่ 1 คณะสาธารณสุขศาสตรบัณฑิต สาขาสาธารณสุขชุมชน วิทยาลัยการสาธารณสุขสิรินธรจังหวัดขอนแก่น
+                    </p>
+                    <p>
+                        ข้าพเจ้าเป็นเด็กที่ไม่ได้เรียนเก่งมาก แต่เป็นเด็กที่ชอบการอ่านหนังสือและชอบหาคำตอบในสิ่งที่ตัวข้าพเจ้านั้นไม่รู้ จุดเปลี่ยนสำคัญที่ทำให้ตัวข้าพเจ้าเริ่มสนใจและอยากศึกษาต่อในคณะนิติศาสตร์ เนื่องจากในวัยเด็กของข้าพเจ้าตั้งแต่ยังจำความไม่ได้ ครอบครัวของข้าพเจ้าได้เข้าไปในชั้นศาลเพื่อพิจารณาคดีกับคู่กรณี ซึ่งข้าพเจ้าในตอนเด็กยังไม่โตพอที่จะได้รับรู้เกี่ยวกับอะไรในวันนั้น จนถึงในวัยที่ข้าพเจ้านั้นโตพออยากรู้เรื่องราว ทำให้ข้าพเจ้ารู้ว่า <span class="text-gold-300 font-medium">"กฎหมายเป็นสิ่งสำคัญที่เราต้องรู้ เพื่อที่เราจะไม่ได้ถูกเอารัดเอาเปรียบจากความอยุติธรรมเหมือนที่ครอบครัวของข้าพเจ้าเคยได้รับ"</span> และเป็นเหตุผลหลักที่ข้าพเจ้าอยากเข้าศึกษาในสาขาวิชานิติศาสตรบัณฑิต
+                    </p>
+                    <p>
+                        เมื่อตัวข้าพเจ้าสำเร็จการศึกษานั้น มีความประสงค์อย่างยิ่งที่จะทำงานในสายงาน <span class="text-gold-300 font-semibold underline decoration-gold-400 underline-offset-4">อาชีพอัยการ</span> เพื่อที่จะปกป้องผู้บริสุทธิ์จากความอยุติธรรม เพื่อให้ประชาชนทุกคนรู้ว่า:
+                    </p>
+
+                    <blockquote class="p-4 rounded-xl bg-navy-950/80 border-l-4 border-gold-400 text-gold-200 text-center font-normal my-6 italic">
+                        "กฎหมายมิได้ใช้แค่กับคนที่อ่อนแอกว่า แต่กฎหมายคือสิ่งที่ทุกคนต้องเคารพ และไม่มีใครอยู่เหนือกฎหมายเพราะประชาชนทุกคนเท่าเทียมกัน"
+                    </blockquote>
+
+                    <p>
+                        ซึ่งตัวข้าพเจ้าเองนั้นเชื่อว่า หากเราอยากให้ประเทศและบ้านเมืองของเราสงบสุขปราศจากความไม่ยุติธรรม ทุกคนต้องปฏิบัติตามกฎหมาย ด้วยเหตุนั้นข้าพเจ้าจะพยายามอย่างสุดความสามารถเพื่อที่จะเป็นอัยการตามที่ตั้งใจเอาไว้ เพราะอยากเห็นประเทศชาติอยู่ในความถูกต้อง สงบสุข ปราศจากการเอารัดเอาเปรียบและความอยุติธรรม
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE & EDUCATION & SKILLS SECTION -->
+    <section id="education" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Background & Education</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">ประวัติการศึกษา และความสามารถ</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-gold-300 to-gold-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Education Timeline Card -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-6 sm:p-8">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-gold-400"></i> ประวัติการศึกษา (Education)
+                    </h3>
+
+                    <div class="relative border-l-2 border-gold-500/30 ml-4 space-y-8 my-4">
+                        
+                        <!-- Higher Edu -->
+                        <div class="relative pl-6 sm:pl-8 group">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gold-400 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-xs text-gold-400 font-medium">ปัจจุบัน</span>
+                            <h4 class="text-lg font-semibold text-white">ระดับอุดมศึกษา</h4>
+                            <p class="text-slate-300 text-sm">หลักสูตรสาธารณสุขศาสตรบัณฑิต สาขาสาธารณสุขชุมชน</p>
+                            <p class="text-slate-400 text-xs mt-1"><i class="fa-solid fa-building-columns mr-1"></i> วิทยาลัยการสาธารณสุขสิรินธรจังหวัดขอนแก่น</p>
+                        </div>
+
+                        <!-- Senior High School -->
+                        <div class="relative pl-6 sm:pl-8 group">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-500 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-xs text-slate-400">ระดับมัธยมศึกษาตอนปลาย</span>
+                            <h4 class="text-lg font-semibold text-white">โรงเรียนบ้านไผ่ (บ.พ.)</h4>
+                            <p class="text-slate-300 text-sm">เกรดเฉลี่ยสะสม (4 ภาคเรียน): <span class="text-gold-300 font-bold">3.01</span></p>
+                        </div>
+
+                        <!-- Junior High School -->
+                        <div class="relative pl-6 sm:pl-8 group">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-xs text-slate-400">ระดับมัธยมศึกษาตอนต้น</span>
+                            <h4 class="text-lg font-semibold text-white">โรงเรียนบ้านไผ่ (บ.พ.)</h4>
+                            <p class="text-slate-300 text-sm">เกรดเฉลี่ยสะสม: <span class="text-gold-300 font-bold">2.74</span></p>
+                        </div>
+
+                        <!-- Primary School -->
+                        <div class="relative pl-6 sm:pl-8 group">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-navy-900 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-xs text-slate-400">ระดับประถมศึกษาปีที่ 1-6</span>
+                            <h4 class="text-lg font-semibold text-white">โรงเรียนบ้านละว้า</h4>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Skills & Abilities Card -->
+                <div class="space-y-6">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-star text-gold-400"></i> ความสามารถพิเศษ
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="p-3 rounded-xl bg-navy-800/60 border border-slate-700/50 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-300 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-medium text-white">ดนตรี</h5>
+                                    <p class="text-xs text-slate-400">เปียโน, กลอง, กีตาร์</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-navy-800/60 border border-slate-700/50 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-300 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user-shield"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-medium text-white">ภาวะผู้นำ</h5>
+                                    <p class="text-xs text-slate-400">ประธานจัดโครงการ / แกนนำเยาวชน</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-navy-800/60 border border-slate-700/50 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-300 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-people-group"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-medium text-white">การทำงานร่วมกันเป็นทีม</h5>
+                                    <p class="text-xs text-slate-400">ปรับตัวง่าย สื่อสารชัดเจน</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-navy-800/60 border border-slate-700/50 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-300 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-medium text-white">คิดสร้างสรรค์ & แก้ปัญหาเฉพาะหน้า</h5>
+                                    <p class="text-xs text-slate-400">คิดวิเคราะห์และรับมือสถานการณ์ฉุกเฉิน</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Info Snippet -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8">
+                        <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-3">ข้อมูลครอบครัว</h4>
+                        <div class="text-xs sm:text-sm text-slate-300 space-y-2">
+                            <p><span class="text-slate-400">บิดา:</span> นายสุระชัย นุดา (อาชีพ: ค้าขาย)</p>
+                            <p><span class="text-slate-400">มารดา:</span> นางชนิภรณ์ ป่าครอง (อาชีพ: ค้าขาย)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTIVITIES SECTION -->
+    <section id="activities" class="py-20 bg-navy-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Activities & Experiences</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">กิจกรรมและผลงานที่เข้าร่วม</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-gold-300 to-gold-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+                <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-gold-500 text-navy-950 transition-all" data-filter="all">
+                    ทั้งหมด
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-800 text-slate-300 hover:text-gold-300 transition-all" data-filter="law">
+                    <i class="fa-solid fa-scale-balanced mr-1"></i> ด้านกฎหมาย
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-800 text-slate-300 hover:text-gold-300 transition-all" data-filter="leadership">
+                    <i class="fa-solid fa-users mr-1"></i> ภาวะผู้นำ
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-800 text-slate-300 hover:text-gold-300 transition-all" data-filter="academic">
+                    <i class="fa-solid fa-book-open mr-1"></i> วิชาการ & จิตอาสา
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-800 text-slate-300 hover:text-gold-300 transition-all" data-filter="env">
+                    <i class="fa-solid fa-leaf mr-1"></i> สิ่งแวดล้อม & อื่นๆ
+                </button>
+            </div>
+
+            <!-- Activity Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="activity-container">
+                
+                <!-- Activity Item 1: Law Highlight -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="law">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Law+Forum+KhonKaen" alt="กิจกรรมด้านกฎหมาย" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gold-500 text-navy-950 text-xs font-bold px-2.5 py-1 rounded-full">ด้านกฎหมาย</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">เวทีเสวนา & การบรรยายกระบวนการยุติธรรมของไทย</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            เข้ารับฟังการบรรยาย *"กระบวนการยุติธรรมของไทย"* และร่วมเวทีเสวนา *"ทิศทางกระบวนการยุติธรรมในอนาคตของไทย"* ณ ศูนย์เยาวชนและครอบครัว เทศบาลนครขอนแก่น
+                        </p>
+                        <div class="text-xs text-gold-300 font-light border-t border-slate-700/50 pt-3">
+                            <i class="fa-solid fa-circle-check mr-1"></i> ได้แลกเปลี่ยนความรู้กับทนายความผู้เชี่ยวชาญและเพื่อนต่างโรงเรียน
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Item 2: Leadership -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="leadership">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Volunteer+Project" alt="ประธานโครงการพี่ให้น้อง" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">ภาวะผู้นำ</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">ประธานจัดโครงการ "จิตอาสาพี่ให้น้อง"</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            เป็นประธานในการจัดกิจกรรมของนักเรียนชั้น ม.6 โรงเรียนบ้านไผ่ ณ โรงเรียนบ้านละว้า ได้รับการชื่นชมจากผู้อำนวยการโรงเรียนว่าเป็นแบบอย่างที่ดีให้รุ่นน้อง
+                        </p>
+                        <div class="text-xs text-gold-300 font-light border-t border-slate-700/50 pt-3">
+                            <i class="fa-solid fa-heart mr-1"></i> แบ่งปันความสุขและสร้างแรงบันดาลใจให้แก่เด็กๆ
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Item 3: Leadership Anti-Drug -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="leadership">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Anti-Drug+Leader" alt="แกนนำป้องกันยาเสพติด" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">ภาวะผู้นำ</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">แกนนำป้องกันยาเสพติดและเฝ้าระวังปัจจัยเสี่ยง</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            ได้รับการคัดเลือกเข้าอบรมเป็นแกนนำ ณ ศูนย์เยาวชนและครอบครัวเทศบาลนครขอนแก่น จัดโดย สสส. และ สคล. เพื่อสนับสนุนสังคมห่างไกลยาเสพติด
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 4: Academic Science Competition -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="academic">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=KKU+Science+Week" alt="แข่งแก้ปัญหาทางวิทยาศาสตร์ มข." class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">วิชาการ</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">แข่งกระบวนการแก้ปัญหาทางวิทยาศาสตร์ ณ มข.</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            เข้าร่วมการแข่งขันระดับ ม.ปลาย ในงานสัปดาห์วิทยาศาสตร์แห่งชาติ ส่วนภูมิภาค ณ คณะวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 5: Blood & Organ Donation -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="academic">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Red+Cross+Donation" alt="บริจาคเลือดและดวงตา" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">จิตอาสา</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">บริจาคโลหิต & แสดงความจำนงบริจาคอวัยวะและดวงตา</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            บริจาคโลหิตกับสภากาชาดไทย ณ เทศบาลบ้านไผ่ และแสดงความจำนงบริจาคอวัยวะเพื่อช่วยเหลือเพื่อนมนุษย์ในอนาคต
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 6: Environment Run & Planting -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="env">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Eco+Planting+and+Run" alt="อนุรักษ์สิ่งแวดล้อม" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">สิ่งแวดล้อม</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">วิ่งการกุศลปลูกป่า & กิจกรรมอนุรักษ์สิ่งแวดล้อม</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            ร่วมวิ่ง *"วิ่งหยอก ดอกภูกระเจียว"* อ.แวงน้อย และอบรมปลูกต้นไม้ริมบึงแก่นนครกับสำนักจัดการทรัพยากรป่าไม้ที่ 7 (ขอนแก่น)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Activity Item 7: Music Performance -->
+                <div class="activity-card glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" data-category="env">
+                    <div class="h-48 bg-navy-800 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Music+Concert" alt="นักดนตรีเปิดงาน" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">สุนทรียภาพ</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-white mb-2">นักดนตรี Mini Concert & งานศิลปหัตถกรรม</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            เป็นนักดนตรีเล่นเปิดงานศิลปหัตถกรรม และแสดงดนตรี Mini Concert ในงานสัปดาห์วิทยาศาสตร์ โรงเรียนบ้านไผ่
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Certificates & Awards</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">เกียรติบัตรและความภาคภูมิใจ</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-gold-300 to-gold-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cert 1: CHULA MOOC -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('CHULA MOOC', 'ผ่านการอบรมหลักสูตร Basic First Aid for Medical Emergency', 'https://placehold.co/800x600/102a43/f3d382?text=CHULA+MOOC+First+Aid')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=CHULA+MOOC+First+Aid" alt="CHULA MOOC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-gold-400 font-medium">CHULA MOOC</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">Basic First Aid for Medical Emergency</h3>
+                    <p class="text-slate-400 text-xs mt-2">หลักสูตรการปฐมพยาบาลเบื้องต้นสำหรับสถานการณ์ฉุกเฉินทางการแพทย์</p>
+                </div>
+
+                <!-- Cert 2: Red Cross Organs -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('สภากาชาดไทย', 'บริจาคดวงตาและอวัยวะ เพื่อประโยชน์ทางการแพทย์', 'https://placehold.co/800x600/102a43/f3d382?text=Red+Cross+Organ+Donation')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Red+Cross+Organ+Donation" alt="สภากาชาดไทย" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-red-400 font-medium">สภากาชาดไทย</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">บริจาคดวงตาและอวัยวะ</h3>
+                    <p class="text-slate-400 text-xs mt-2">แสดงความจำนงในการอุทิศอวัยวะและดวงตาแก่เพื่อนมนุษย์</p>
+                </div>
+
+                <!-- Cert 3: ONCB Anti Drug -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('ป.ป.ส. ภาค 4', 'ผ่านการฝึกอบรมหลักสูตร รู้คิด รู้ทัน ป้องกันยาเสพติด', 'https://placehold.co/800x600/102a43/f3d382?text=ONCB+Anti+Drug+Cert')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=ONCB+Anti+Drug+Cert" alt="ป.ป.ส. ภาค 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-blue-400 font-medium">สำนักงาน ป.ป.ส. ภาค 4</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">หลักสูตร "รู้คิด รู้ทัน ป้องกันยาเสพติด"</h3>
+                    <p class="text-slate-400 text-xs mt-2">ผ่านการอบรมสร้างภูมิคุ้มกันยาเสพติดในกลุ่มเยาวชน</p>
+                </div>
+
+                <!-- Cert 4: Forest Conservation -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('สำนักจัดการทรัพยากรป่าไม้ที่ 7', 'เข้าร่วมกิจกรรมค่ายเยาวชนจิตอาสาอนุรักษ์ป่า', 'https://placehold.co/800x600/102a43/f3d382?text=Forest+Youth+Camp')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Forest+Youth+Camp" alt="กรมป่าไม้" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-green-400 font-medium">สำนักจัดการทรัพยากรป่าไม้ที่ 7</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">ค่ายเยาวชนจิตอาสาอนุรักษ์ป่า</h3>
+                    <p class="text-slate-400 text-xs mt-2">ร่วมอนุรักษ์ธรรมชาติและทำกิจกรรมเพื่อสิ่งแวดล้อม</p>
+                </div>
+
+                <!-- Cert 5: Find My Dream -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('บ้านพักเด็กและครอบครัวขอนแก่น', 'ผ่านการคัดเลือกเข้าค่ายโครงการ Find My Dream', 'https://placehold.co/800x600/102a43/f3d382?text=Find+My+Dream+Camp')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Find+My+Dream+Camp" alt="Find My Dream" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-purple-400 font-medium">บ้านพักเด็กและครอบครัวขอนแก่น</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">โครงการ Find My Dream</h3>
+                    <p class="text-slate-400 text-xs mt-2">การค้นหาและพัฒนาศักยภาพตนเองเพื่ออนาคต</p>
+                </div>
+
+                <!-- Cert 6: Math Speed -->
+                <div class="glass-card rounded-2xl p-5 hover:border-gold-400 transition-all group cursor-pointer" onclick="openCertModal('โรงเรียนบ้านไผ่', 'เข้าร่วมการแข่งขันคณิตคิดเร็ว ในสัปดาห์คณิตศาสตร์', 'https://placehold.co/800x600/102a43/f3d382?text=Math+Speed+Cert')">
+                    <div class="h-40 bg-navy-950 rounded-xl overflow-hidden mb-4 relative">
+                        <img src="https://placehold.co/600x400/102a43/f3d382?text=Math+Speed+Cert" alt="คณิตคิดเร็ว" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs text-gold-400 font-medium">โรงเรียนบ้านไผ่</span>
+                    <h3 class="text-white font-semibold text-sm mt-1">การแข่งขันคณิตคิดเร็ว</h3>
+                    <p class="text-slate-400 text-xs mt-2">เข้าร่วมการแข่งขันในสัปดาห์คณิตศาสตร์</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <footer id="contact" class="bg-navy-950 pt-20 pb-12 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center font-bold text-navy-950 text-xl">
+                            PN
+                        </div>
+                        <span class="text-2xl font-bold text-white tracking-wider">นายภูผา นุดา</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-md">
+                        มุ่งมั่นเข้าศึกษา คณะนิติศาสตร์ มหาวิทยาลัยขอนแก่น <br>
+                        โครงการรับนักเรียนผู้มีคุณธรรม จริยธรรมและบำเพ็ญประโยชน์ (โครงการเด็กดีมีที่เรียน)
+                    </p>
+                    <div class="pt-2 text-xs text-gold-400/80">
+                        <p><i class="fa-solid fa-location-dot mr-2"></i>175 หมู่ 10 บ้านละว้า ต.เมืองเพีย อ.บ้านไผ่ จ.ขอนแก่น</p>
+                    </div>
+                </div>
+
+                <!-- Right Contact Cards -->
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <a href="https://facebook.com" target="_blank" class="p-4 rounded-xl glass-card flex items-center gap-4 hover:border-blue-500 transition-colors">
+                        <div class="w-12 h-12 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Facebook</span>
+                            <span class="text-sm font-semibold text-white">PH Phu Pha</span>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" class="p-4 rounded-xl glass-card flex items-center gap-4 hover:border-pink-500 transition-colors">
+                        <div class="w-12 h-12 rounded-lg bg-pink-600/20 text-pink-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Instagram</span>
+                            <span class="text-sm font-semibold text-white">babyphupx</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:Twopee14za@gmail.com" class="p-4 rounded-xl glass-card flex items-center gap-4 hover:border-gold-400 transition-colors">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/20 text-gold-300 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Email</span>
+                            <span class="text-xs sm:text-sm font-semibold text-white truncate max-w-[180px] block">Twopee14za@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:0618416875" class="p-4 rounded-xl glass-card flex items-center gap-4 hover:border-emerald-500 transition-colors">
+                        <div class="w-12 h-12 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">เบอร์โทรศัพท์</span>
+                            <span class="text-sm font-semibold text-white">061-841-6875</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Motto & Copyright -->
+            <div class="pt-8 text-center space-y-3">
+                <p class="text-gold-300 font-light italic text-sm">
+                    "ไม่มีสิ่งใดอยู่เหนือความพยายามและความอดทน — หากอยากก้าวหน้า จงอย่าหยุดพัฒนาตัวเอง"
+                </p>
+                <p class="text-slate-500 text-xs">
+                    &copy; 2026 Phupha Nuda. Faculty of Law, Khon Kaen University Candidate. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CERTIFICATE LIGHTBOX MODAL -->
+    <div id="cert-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity">
+        <div class="glass-card bg-navy-900 border-gold-400/40 rounded-3xl max-w-2xl w-full p-6 relative overflow-hidden">
+            <button onclick="closeCertModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span id="modal-issuer" class="text-xs font-semibold text-gold-400 uppercase tracking-wider block mb-1">Issuer</span>
+            <h3 id="modal-title" class="text-xl font-bold text-white mb-4">Certificate Title</h3>
+            <div class="h-64 sm:h-80 rounded-xl overflow-hidden bg-navy-950 mb-4">
+                <img id="modal-img" src="" alt="Certificate" class="w-full h-full object-contain">
+            </div>
+            <div class="text-right">
+                <button onclick="closeCertModal()" class="px-5 py-2 rounded-xl bg-gold-500 text-navy-950 font-medium text-sm hover:bg-gold-400 transition-colors">
+                    ปิดหน้าต่าง
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITIES -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Activity Grid Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const activityCards = document.querySelectorAll('.activity-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-gold-500', 'text-navy-950');
+                    b.classList.add('bg-navy-800', 'text-slate-300');
+                });
+
+                // Add active state to clicked button
+                btn.classList.add('active', 'bg-gold-500', 'text-navy-950');
+                btn.classList.remove('bg-navy-800', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                activityCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Certificate Lightbox Modal Functions
+        function openCertModal(issuer, title, imgSrc) {
+            document.getElementById('modal-issuer').innerText = issuer;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-img').src = imgSrc;
+            
+            const modal = document.getElementById('cert-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('cert-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close Modal when clicking outside the box
+        document.getElementById('cert-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'cert-modal') {
+                closeCertModal();
+            }
+        });
+    </script>
+</body>
+</html>
